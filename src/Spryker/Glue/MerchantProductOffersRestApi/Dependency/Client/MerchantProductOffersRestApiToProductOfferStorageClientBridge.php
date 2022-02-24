@@ -11,19 +11,19 @@ use Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer;
 use Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer;
 use Generated\Shared\Transfer\ProductOfferStorageTransfer;
 
-class MerchantProductOffersRestApiToMerchantProductOfferStorageClientBridge implements MerchantProductOffersRestApiToMerchantProductOfferStorageClientInterface
+class MerchantProductOffersRestApiToProductOfferStorageClientBridge implements MerchantProductOffersRestApiToProductOfferStorageClientInterface
 {
     /**
-     * @var \Spryker\Client\MerchantProductOfferStorage\MerchantProductOfferStorageClientInterface
+     * @var \Spryker\Client\ProductOfferStorage\ProductOfferStorageClientInterface
      */
-    protected $merchantProductOfferStorageClient;
+    protected $productOfferStorageClient;
 
     /**
-     * @param \Spryker\Client\MerchantProductOfferStorage\MerchantProductOfferStorageClientInterface $merchantProductOfferStorageClient
+     * @param \Spryker\Client\ProductOfferStorage\ProductOfferStorageClientInterface $productOfferStorageClient
      */
-    public function __construct($merchantProductOfferStorageClient)
+    public function __construct($productOfferStorageClient)
     {
-        $this->merchantProductOfferStorageClient = $merchantProductOfferStorageClient;
+        $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
     /**
@@ -31,10 +31,10 @@ class MerchantProductOffersRestApiToMerchantProductOfferStorageClientBridge impl
      *
      * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
      */
-    public function getProductOffersBySkus(
+    public function getProductOfferStoragesBySkus(
         ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
     ): ProductOfferStorageCollectionTransfer {
-        return $this->merchantProductOfferStorageClient->getProductOffersBySkus($productOfferStorageCriteriaTransfer);
+        return $this->productOfferStorageClient->getProductOfferStoragesBySkus($productOfferStorageCriteriaTransfer);
     }
 
     /**
@@ -44,7 +44,7 @@ class MerchantProductOffersRestApiToMerchantProductOfferStorageClientBridge impl
      */
     public function findProductConcreteDefaultProductOffer(ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer): ?string
     {
-        return $this->merchantProductOfferStorageClient->findProductConcreteDefaultProductOffer($productOfferStorageCriteriaTransfer);
+        return $this->productOfferStorageClient->findProductConcreteDefaultProductOffer($productOfferStorageCriteriaTransfer);
     }
 
     /**
@@ -54,6 +54,6 @@ class MerchantProductOffersRestApiToMerchantProductOfferStorageClientBridge impl
      */
     public function findProductOfferStorageByReference(string $productOfferReference): ?ProductOfferStorageTransfer
     {
-        return $this->merchantProductOfferStorageClient->findProductOfferStorageByReference($productOfferReference);
+        return $this->productOfferStorageClient->findProductOfferStorageByReference($productOfferReference);
     }
 }
