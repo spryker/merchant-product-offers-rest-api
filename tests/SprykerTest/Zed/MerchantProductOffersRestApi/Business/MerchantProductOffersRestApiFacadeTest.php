@@ -28,9 +28,6 @@ class MerchantProductOffersRestApiFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferMapsDataSuccessfully(): void
     {
         // Arrange
@@ -56,9 +53,6 @@ class MerchantProductOffersRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferMapsDataUnsuccessfullyWithDifferentSkus(): void
     {
         // Arrange
@@ -86,9 +80,6 @@ class MerchantProductOffersRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferMapsDataUnsuccessfullyWithNoOfferData(): void
     {
         // Arrange

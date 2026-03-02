@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestItemsAttributesTransfer;
 
 class CartItemsAttributesMapper implements CartItemsAttributesMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\RestItemsAttributesTransfer $restItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestItemsAttributesTransfer
-     */
     public function mapItemTransferToRestItemsAttributesTransfer(
         ItemTransfer $itemTransfer,
         RestItemsAttributesTransfer $restItemsAttributesTransfer

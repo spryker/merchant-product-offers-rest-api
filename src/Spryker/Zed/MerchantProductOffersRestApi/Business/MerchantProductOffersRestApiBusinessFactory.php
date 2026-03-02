@@ -16,9 +16,6 @@ use Spryker\Zed\MerchantProductOffersRestApi\Business\Mapper\MerchantProductOffe
  */
 class MerchantProductOffersRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantProductOffersRestApi\Business\Mapper\MerchantProductOfferMapperInterface
-     */
     public function createMerchantProductOfferMapper(): MerchantProductOfferMapperInterface
     {
         return new MerchantProductOfferMapper();

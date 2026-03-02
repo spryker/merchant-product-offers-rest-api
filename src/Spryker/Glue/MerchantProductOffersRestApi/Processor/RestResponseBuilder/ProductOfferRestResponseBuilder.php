@@ -24,17 +24,11 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
      */
     protected $restResourceBuilder;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     */
     public function __construct(RestResourceBuilderInterface $restResourceBuilder)
     {
         $this->restResourceBuilder = $restResourceBuilder;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferEmptyRestResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder->createRestResponse();
@@ -56,12 +50,6 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
         return $productOffersRestResponse;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageTransfer $productOfferStorageTransfer
-     * @param string $defaultMerchantProductOfferReference
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferRestResponse(
         ProductOfferStorageTransfer $productOfferStorageTransfer,
         string $defaultMerchantProductOfferReference
@@ -89,9 +77,6 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
         return $productOffersRestResources;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductConcreteSkuNotSpecifiedErrorResponse(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -102,9 +87,6 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
         return $this->restResourceBuilder->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferIdNotSpecifiedErrorResponse(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -115,9 +97,6 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
         return $this->restResourceBuilder->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferNotFoundErrorResponse(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -128,12 +107,6 @@ class ProductOfferRestResponseBuilder implements ProductOfferRestResponseBuilder
         return $this->restResourceBuilder->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageTransfer $productOfferStorageTransfer
-     * @param string|null $defaultMerchantProductOfferReference
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createProductOfferRestResource(
         ProductOfferStorageTransfer $productOfferStorageTransfer,
         ?string $defaultMerchantProductOfferReference = null

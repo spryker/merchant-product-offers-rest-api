@@ -18,20 +18,11 @@ class CartItemExpander implements CartItemExpanderInterface
      */
     protected $productOfferStorageClient;
 
-    /**
-     * @param \Spryker\Glue\MerchantProductOffersRestApi\Dependency\Client\MerchantProductOffersRestApiToProductOfferStorageClientInterface $productOfferStorageClient
-     */
     public function __construct(MerchantProductOffersRestApiToProductOfferStorageClientInterface $productOfferStorageClient)
     {
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartItemRequestTransfer $cartItemRequestTransfer
-     * @param \Generated\Shared\Transfer\RestCartItemsAttributesTransfer $restCartItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartItemRequestTransfer
-     */
     public function expand(
         CartItemRequestTransfer $cartItemRequestTransfer,
         RestCartItemsAttributesTransfer $restCartItemsAttributesTransfer

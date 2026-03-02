@@ -27,10 +27,6 @@ class ProductOfferReader implements ProductOfferReaderInterface
      */
     protected $productOfferRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\MerchantProductOffersRestApi\Processor\RestResponseBuilder\ProductOfferRestResponseBuilderInterface $productOfferRestResponseBuilder
-     * @param \Spryker\Glue\MerchantProductOffersRestApi\Dependency\Client\MerchantProductOffersRestApiToProductOfferStorageClientInterface $productOfferStorageClient
-     */
     public function __construct(
         ProductOfferRestResponseBuilderInterface $productOfferRestResponseBuilder,
         MerchantProductOffersRestApiToProductOfferStorageClientInterface $productOfferStorageClient
@@ -39,11 +35,6 @@ class ProductOfferReader implements ProductOfferReaderInterface
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getProductOffer(RestRequestInterface $restRequest): RestResponseInterface
     {
         $merchantProductOfferReference = $restRequest->getResource()->getId() ?? null;
@@ -70,11 +61,6 @@ class ProductOfferReader implements ProductOfferReaderInterface
         );
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getProductOffers(RestRequestInterface $restRequest): RestResponseInterface
     {
         $productConcreteResource = $restRequest->findParentResourceByType(MerchantProductOffersRestApiConfig::RESOURCE_CONCRETE_PRODUCTS);
@@ -109,11 +95,6 @@ class ProductOfferReader implements ProductOfferReaderInterface
         return $this->productOfferRestResponseBuilder->createProductOfferRestResources($productOfferStorageCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageTransfer $productOfferStorageTransfer
-     *
-     * @return string|null
-     */
     protected function getDefaultProductOfferReference(ProductOfferStorageTransfer $productOfferStorageTransfer): ?string
     {
         /** @var string $sku */

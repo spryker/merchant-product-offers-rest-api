@@ -13,9 +13,6 @@ use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 
 interface ProductOfferRestResponseBuilderInterface
 {
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferEmptyRestResponse(): RestResponseInterface;
 
     /**
@@ -27,12 +24,6 @@ interface ProductOfferRestResponseBuilderInterface
         array $productOfferRestResources
     ): RestResponseInterface;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageTransfer $productOfferStorageTransfer
-     * @param string $defaultMerchantProductOfferReference
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferRestResponse(
         ProductOfferStorageTransfer $productOfferStorageTransfer,
         string $defaultMerchantProductOfferReference
@@ -45,18 +36,9 @@ interface ProductOfferRestResponseBuilderInterface
      */
     public function createProductOfferRestResources(ProductOfferStorageCollectionTransfer $productOfferStorageCollectionTransfer): array;
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductConcreteSkuNotSpecifiedErrorResponse(): RestResponseInterface;
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferIdNotSpecifiedErrorResponse(): RestResponseInterface;
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductOfferNotFoundErrorResponse(): RestResponseInterface;
 }

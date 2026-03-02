@@ -53,22 +53,11 @@ class MerchantProductOffersRestApiBusinessTester extends Actor
      */
     public const PRODUCT_OFFER_REFERENCE = 'PRODUCT_OFFER_REFERENCE';
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\CartItemRequestTransfer
-     */
     public function prepareCartItemRequestTransfer(array $seed = []): CartItemRequestTransfer
     {
         return (new CartItemRequestBuilder($seed))->build();
     }
 
-    /**
-     * @param array $seed
-     * @param array $itemSeed
-     *
-     * @return \Generated\Shared\Transfer\PersistentCartChangeTransfer
-     */
     public function preparePersistentCartChangeTransfer(array $seed = [], array $itemSeed = []): PersistentCartChangeTransfer
     {
         $itemSeed = array_merge(['sku' => static::PRODUCT_CONCRETE_SKU], $itemSeed);
@@ -79,11 +68,6 @@ class MerchantProductOffersRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function prepareItemTransfer(array $seed = []): ItemTransfer
     {
         return (new ItemBuilder($seed))->build();
