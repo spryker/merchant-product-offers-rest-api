@@ -17,3 +17,4 @@ suites:
         modules:
             enabled:
                 - \SprykerTest\Zed\Testify\Helper\BusinessHelper
+                - \SprykerTest\Shared\Testify\Helper\DependencyHelper
