@@ -1,0 +1,72 @@
+resource:
+    name: ConcreteProductsProductOffers
+    shortName: product-offers
+    description: 'Product offers for a concrete product'
+
+    provider: Spryker\Glue\MerchantProductOffersRestApi\Api\Storefront\Provider\ConcreteProductsProductOffersStorefrontProvider
+
+    paginationEnabled: false
+
+    operations:
+        - type: GetCollection
+          description: 'Retrieve product offers for a concrete product'
+          uriTemplate: '/concrete-products/{sku}/product-offers'
+          uriVariables:
+              sku:
+                  fromClass: ConcreteProductsStorefrontResource
+
+    includes:
+        - relationshipName: merchants
+          targetResource: Merchants
+          uriTemplate: /merchants/{merchantReference}
+          uriVariableMappings:
+              merchantReference: merchantReference
+
+        - relationshipName: product-offer-prices
+          targetResource: ProductOfferPrices
+          uriTemplate: /product-offers/{productOfferReference}/product-offer-prices
+          uriVariableMappings:
+              productOfferReference: productOfferReference
+
+        - relationshipName: product-offer-availabilities
+          targetResource: ProductOfferAvailabilities
+          uriTemplate: /product-offers/{productOfferReference}/product-offer-availabilities
+          uriVariableMappings:
+              productOfferReference: productOfferReference
+
+    properties:
+        productOfferReference:
+            type: string
+            identifier: true
+            writable: false
+            readable: true
+            description: 'Unique product offer reference'
+            openapiContext:
+                example: 'offer5'
+
+        merchantSku:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Merchant-specific SKU of the offer'
+            openapiContext:
+                example: 'M1-001'
+
+        merchantReference:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Merchant reference'
+            openapiContext:
+                example: 'MER000001'
+
+        isDefault:
+            type: boolean
+            writable: false
+            readable: true
+            required: false
+            description: 'Flag indicating the default offer for this product'
+            openapiContext:
+                example: true
