@@ -12,11 +12,15 @@ use Spryker\Glue\Kernel\AbstractBundleConfig;
 class MerchantProductOffersRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_PRODUCT_OFFERS = 'product-offers';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\ProductsRestApi\ProductsRestApiConfig::RESOURCE_CONCRETE_PRODUCTS
      *
      * @var string
@@ -24,26 +28,36 @@ class MerchantProductOffersRestApiConfig extends AbstractBundleConfig
     public const RESOURCE_CONCRETE_PRODUCTS = 'concrete-products';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_PRODUCT_OFFER_NOT_FOUND = '3701';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_PRODUCT_OFFER_NOT_FOUND = 'Product offer not found.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_PRODUCT_OFFER_ID_IS_NOT_SPECIFIED = '3702';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_PRODUCT_OFFER_ID_SKU_IS_NOT_SPECIFIED = 'Product offer ID is not specified.';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\ProductsRestApi\ProductsRestApiConfig::RESPONSE_CODE_CONCRETE_PRODUCT_SKU_IS_NOT_SPECIFIED
      *
      * @var string
@@ -51,6 +65,8 @@ class MerchantProductOffersRestApiConfig extends AbstractBundleConfig
     public const RESPONSE_CODE_CONCRETE_PRODUCT_SKU_IS_NOT_SPECIFIED = '312';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\ProductsRestApi\ProductsRestApiConfig::RESPONSE_DETAIL_CONCRETE_PRODUCT_SKU_IS_NOT_SPECIFIED
      *
      * @var string
