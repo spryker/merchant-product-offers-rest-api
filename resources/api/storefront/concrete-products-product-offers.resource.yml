@@ -14,6 +14,10 @@ resource:
           uriVariables:
               sku:
                   fromClass: ConcreteProductsStorefrontResource
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Product offers of the concrete product. Empty when the product has none.'
 
     includes:
         - relationshipName: merchants

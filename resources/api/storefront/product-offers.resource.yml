@@ -10,11 +10,21 @@ resource:
     operations:
         - type: Get
           description: 'Retrieve a specific product offer by reference'
+          openapiContext:
+              responses:
+                  200:
+                      description: 'A single product offer.'
+                  404:
+                      description: 'Product offer not found, or the offer carries no concrete product.'
 
         - type: GetCollection
           name: getProductOffersFallback
-          description: 'Backward compatibility — returns 400 when offer reference is missing'
+          description: 'Reject a product offer request that omits the offer reference'
           uriTemplate: '/product-offers'
+          openapiContext:
+              responses:
+                  400:
+                      description: 'Product offer reference is not specified.'
 
     includes:
         - relationshipName: merchants
