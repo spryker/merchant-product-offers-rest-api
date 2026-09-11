@@ -21,6 +21,7 @@ resource:
           name: getProductOffersFallback
           description: 'Reject a product offer request that omits the offer reference'
           uriTemplate: '/product-offers'
+          openapi: false
           openapiContext:
               responses:
                   400:
