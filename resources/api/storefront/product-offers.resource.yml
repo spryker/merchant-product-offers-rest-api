@@ -10,6 +10,9 @@ resource:
     operations:
         - type: Get
           description: 'Retrieve a specific product offer by reference'
+          extraProperties:
+              notFoundCode: '3701'
+              notFoundMessage: 'Product offer not found.'
           openapiContext:
               responses:
                   200:
