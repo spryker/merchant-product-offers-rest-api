@@ -38,6 +38,8 @@
         <property name="productConcreteSku" type="string" description="The unique Stock Keeping Unit (SKU) for a concrete, sellable product variant."/>
         <property name="productOfferReference" type="string" description="A unique reference identifier for a specific product offer from a merchant."/>
         <property name="merchantReference" type="string" description="A unique reference identifier for a merchant."/>
+        <property name="merchantSku" type="string" strict="true"/>
+        <property name="isDefault" type="bool"/>
     </transfer>
 
     <transfer name="ProductOfferStorageCriteria">
